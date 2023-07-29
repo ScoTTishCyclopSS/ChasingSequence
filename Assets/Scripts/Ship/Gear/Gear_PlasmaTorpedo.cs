@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pooling;
 using UnityEngine;
 
 public class Gear_PlasmaTorpedo : Gear
@@ -21,6 +22,7 @@ public class Gear_PlasmaTorpedo : Gear
         {
             NextShot = Time.time + fireRate;
             ship.InstantiateProjectile(prefab, fireSpeed);
+            PoolingManager.instance.objectPool.Spawn("asteroid", Vector3.zero, Quaternion.identity);
         }
     }
 }

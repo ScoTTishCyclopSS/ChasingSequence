@@ -3,6 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(GearFactory))]
+
 public class ShipBase : MonoBehaviour
 {
     private Rigidbody Rb { get; set; }
@@ -13,7 +14,7 @@ public class ShipBase : MonoBehaviour
     [Header("Movement Settings")] public float drag = 8f;
     public float tiltAngle = 30f;
     public float jerkForce = 2f;
-    [Range(0, 1)] public float rotationSpeed = 0.07f;
+    [Range(0, 0.1f)] public float rotationSpeed = 0.07f;
 
     #endregion
 
@@ -31,6 +32,16 @@ public class ShipBase : MonoBehaviour
     protected bool IsUsingAbilityA { get; set; }
     protected bool IsUsingAbilityB { get; set; }
 
+    #endregion
+
+    #region Camera
+    [Header("Camera Settings")]
+    
+    public Transform activeCamera;
+    public float cameraTiltAngle = 10f;
+    [Range(0, 0.1f)] public float cameraRotationSpeed = 0.02f;
+    public bool invertSway = false;
+    
     #endregion
 
     private void Start()
@@ -76,6 +87,7 @@ public class ShipBase : MonoBehaviour
             Rb.AddForce(MoveDirection * jerkForce, ForceMode.Impulse);
         }
         RotationAfterMove();
+        CameraRotation();
     }
 
     protected virtual void RotationAfterMove()
@@ -83,11 +95,24 @@ public class ShipBase : MonoBehaviour
         var newRotation = Quaternion.Euler(MoveDirection.y, 0f, -(tiltAngle * MoveDirection.x));
         Rb.rotation = Quaternion.Slerp(Rb.rotation, newRotation, rotationSpeed);
     }
+    
+    private void CameraRotation()
+    {
+        Quaternion currCamRotation = activeCamera.rotation;
+        int invert = invertSway ? -1 : 1;
+
+        var newCamRotation = Quaternion.Euler(
+            currCamRotation.eulerAngles.x, 
+            currCamRotation.eulerAngles.y, 
+            cameraTiltAngle * MoveDirection.x * invert
+            );
+        
+        activeCamera.rotation = Quaternion.Slerp(currCamRotation, newCamRotation, cameraRotationSpeed);
+    }
 
     public void InstantiateProjectile(Rigidbody prefab, float speed)
     {
         var projectile = Instantiate(prefab, Rb.position, Quaternion.identity);
         projectile.AddForce(projectile.transform.forward * speed, ForceMode.Force);
     }
-
 }

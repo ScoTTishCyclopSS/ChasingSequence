@@ -73,6 +73,9 @@ Material:
     - _DstBlend: 0
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 1
+    - _Factor: 1.5
+    - _FalloffDistance: 200
+    - _ONLYDEPTH: 0
     - _OpaqueCullMode: 2
     - _RenderQueueType: 1
     - _SrcBlend: 1

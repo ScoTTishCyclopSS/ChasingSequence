@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
+
 public class ShipPlayerBase : ShipBase
 {
     // controls
@@ -75,6 +76,6 @@ public class ShipPlayerBase : ShipBase
     
     private void OnUseAbilityB (InputAction.CallbackContext ctx)
     {
-        IsUsingAbilityB = ctx.performed;
+        IsUsingAbilityB = ctx.performed; 
     }
 }

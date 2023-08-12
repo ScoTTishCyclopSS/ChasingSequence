@@ -86,7 +86,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
+                    ""name"": ""X-Axis"",
                     ""id"": ""e6a47583-5845-4cc5-a09d-851e7ad2d1c2"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -111,6 +111,39 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""positive"",
                     ""id"": ""73a1f478-0b1b-4834-a173-c90b7bcb396f"",
                     ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""ControlScheme"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Y-Axis"",
+                    ""id"": ""f0299ba1-12b0-40df-a8de-29b28e035406"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1c7ea098-df52-4e76-86c2-9e7216e9e7ab"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""ControlScheme"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""63755095-0161-43b3-9cbf-4b415b78493b"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""ControlScheme"",

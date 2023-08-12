@@ -48,6 +48,8 @@ namespace Pooling
 
         public T Spawn(string tag, Vector3 position, Quaternion rotation)
         {
+            
+            
             if(string.IsNullOrEmpty(tag)) return null;
 
             if (!dict.ContainsKey(tag))

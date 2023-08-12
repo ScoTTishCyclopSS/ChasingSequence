@@ -41,6 +41,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - ENABLE_BENDING
   - _DISABLE_SSR_TRANSPARENT
   - _DOUBLESIDED_ON
   - _ENABLE_FOG_ON_TRANSPARENT
@@ -78,7 +79,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - ENABLE_BENDING: 0
+    - ENABLE_BENDING: 1
     - ENABLE_BENDING_PLANET: 0
     - _AddPrecomputedVelocity: 0
     - _AlphaCutoffEnable: 0
@@ -111,7 +112,7 @@ Material:
     - _Float_1: -14.8
     - _GridFrequency: 0.4
     - _GridSize: 0.912
-    - _Height: 0.964
+    - _Height: 0.974
     - _Horizontal: 0
     - _ISPROP: 0
     - _MaxVisDist: 464.8
@@ -161,7 +162,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Angle: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 4, g: 4, b: 4, a: 0}
+    - _Color: {r: 5.9921575, g: 5.9921575, b: 5.9921575, a: 0}
     - _Count: {r: 2, g: 2, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

@@ -13,9 +13,9 @@ namespace Pooling
 
         public override void Spawn(Vector3 position, Quaternion rotation)
         {
-            gameObject.SetActive(true);
             gameObject.transform.position = position;
             gameObject.transform.rotation = rotation;
+            gameObject.SetActive(true);
         }
     }
 }

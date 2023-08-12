@@ -11,9 +11,10 @@ namespace Pooling
 
         private void Awake()
         {
-            hitscanPool.Init(this);
             if (instance == null)
-            {
+            { 
+                hitscanPool.Init(this);
+                objectPool.Init(this);
                 instance = this;
             }
             else

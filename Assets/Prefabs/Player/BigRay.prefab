@@ -53,14 +53,18 @@ MonoBehaviour:
   blockLayer:
     serializedVersion: 2
     m_Bits: 1
-  width: 1
-  damage: 1
+  width: 2
+  damage: 3
   lineRenderer: {fileID: 3789278714883869147}
   lifetime: 0.4
   animatedProperties:
   - name: _Dissolve
     start: 0
     end: 1
+    shaderProperty: 0
+  - name: _Width
+    start: 1
+    end: 0.3
     shaderProperty: 0
 --- !u!1 &8315969546859089893
 GameObject:
@@ -141,7 +145,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:

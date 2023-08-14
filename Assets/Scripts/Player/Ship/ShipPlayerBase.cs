@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,10 +18,25 @@ public class ShipPlayerBase : ShipBase
     // Weapon manager
     private WeaponManager _equipmentManager;
 
+    private bool shootingPrimary;
+    private bool shootingSecondary;
+    
     private void Awake()
     {
         PlayerControls = new Controls();
         _equipmentManager = GetComponent<WeaponManager>();
+    }
+
+    private void Update()
+    {
+        if (shootingPrimary && _equipmentManager.GetCurrentWeapon(WeaponManager.SlotType.Primary).firingMode == Weapon.FiringMode.automatic)
+        {
+            _equipmentManager.UseWeapon(WeaponManager.SlotType.Primary, true);
+        }
+        if (shootingSecondary && _equipmentManager.GetCurrentWeapon(WeaponManager.SlotType.Secondary).firingMode == Weapon.FiringMode.automatic)
+        {
+            _equipmentManager.UseWeapon(WeaponManager.SlotType.Secondary, true);
+        }
     }
 
     private void OnEnable()
@@ -34,11 +50,11 @@ public class ShipPlayerBase : ShipBase
         MoveAction.performed += OnMove;
         MoveAction.canceled += OnMove;
 
-        ShootPrimaryAction.performed += OnShootPrimary;
-        ShootPrimaryAction.canceled += OnShootPrimary;
+        ShootPrimaryAction.performed += (ctx) => OnShootPrimary(true);
+        ShootPrimaryAction.canceled += (ctx) => OnShootPrimary(false);
 
-        ShootSecondaryAction.performed += OnShootSecondary;
-        ShootSecondaryAction.canceled += OnShootSecondary;
+        ShootSecondaryAction.performed +=(ctx) => OnShootSecondary(true);
+        ShootSecondaryAction.canceled += (ctx) => OnShootSecondary(false);
     }
 
     private void OnDisable()
@@ -51,13 +67,15 @@ public class ShipPlayerBase : ShipBase
         MoveDirection = new Vector2(ctx.ReadValue<float>(), 0f);
     }
     
-    private void OnShootPrimary (InputAction.CallbackContext ctx)
+    private void OnShootPrimary (bool held)
     {
-        _equipmentManager.UseWeapon(WeaponManager.SlotType.Primary, ctx.performed);
+        shootingPrimary = held;
+        _equipmentManager.UseWeapon(WeaponManager.SlotType.Primary, held);
     }
     
-    private void OnShootSecondary (InputAction.CallbackContext ctx)
+    private void OnShootSecondary (bool held)
     {
-        _equipmentManager.UseWeapon(WeaponManager.SlotType.Secondary, ctx.performed);
+        shootingSecondary = held;
+        _equipmentManager.UseWeapon(WeaponManager.SlotType.Secondary, held);
     }
 }

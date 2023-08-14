@@ -1617,6 +1617,7 @@ MonoBehaviour:
   fireRate: 0.3
   screenshakePower: 10
   screenStop: 3
+  firingMode: 0
   onFire:
     m_PersistentCalls:
       m_Calls:
@@ -2460,6 +2461,7 @@ MonoBehaviour:
   fireRate: 0.1
   screenshakePower: 0
   screenStop: 0
+  firingMode: 0
   onFire:
     m_PersistentCalls:
       m_Calls:
@@ -2509,9 +2511,10 @@ MonoBehaviour:
   slotType: 0
   rayType: testRay
   fireSpeed: 1
-  fireRate: 0.05
+  fireRate: 0.2
   screenshakePower: 2
   screenStop: 1
+  firingMode: 1
   onFire:
     m_PersistentCalls:
       m_Calls:

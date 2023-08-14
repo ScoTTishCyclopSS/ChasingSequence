@@ -26,6 +26,7 @@ public class LoadingScene : MonoBehaviour
     private void Start()
     {
         _startZ = ship.transform.position.z;
+        _endZ = 0f;
     }
 
     private void Update()
@@ -50,6 +51,8 @@ public class LoadingScene : MonoBehaviour
 
     public void LoadScene(int sceneId)
     {
+        _startZ = ship.transform.position.z;
+        _endZ = _startZ + 20f;
         menuCanvasGroup.interactable = false;
         StartCoroutine(ShipGoFly());
         StartCoroutine(ShowLoading(sceneId));

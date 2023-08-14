@@ -8,6 +8,8 @@ namespace Pooling
         public static PoolingManager instance { get; private set; }
         public Pooler<GeneralPool> objectPool;
         public Pooler<HitscanPool> hitscanPool;
+        public Pooler<VfxPool> vfxPool;
+        public Pooler<SfxPool> sfxPool;
 
         private void Awake()
         {
@@ -15,6 +17,8 @@ namespace Pooling
             { 
                 hitscanPool.Init(this);
                 objectPool.Init(this);
+                vfxPool.Init(this);
+                sfxPool.Init(this);
                 instance = this;
             }
             else

@@ -5,8 +5,11 @@ using UnityEngine.Events;
 public abstract class Weapon : MonoBehaviour
 {
     public WeaponManager.SlotType slotType;
+    public string rayType = "testRay";
     public float fireSpeed;
     public float fireRate;
+    public float screenshakePower;
+    public float screenStop;
     protected float NextShot;
     
     public UnityEvent onFire;

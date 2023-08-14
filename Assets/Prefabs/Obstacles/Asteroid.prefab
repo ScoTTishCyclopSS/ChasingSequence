@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 5302316057754152981}
   - component: {fileID: 4793770403904715705}
   - component: {fileID: 4427538301649831836}
-  m_Layer: 0
+  - component: {fileID: 1244532901350563401}
+  m_Layer: 6
   m_Name: Asteroid
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
@@ -178,11 +179,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736abd1015abc3a4a98ac08d04051146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startHealth: 3
+  _startHealth: 1
   invincible: 0
   OnHit:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4992990006948730628}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1244532901350563401}
+        m_TargetAssemblyTypeName: PoolBinder, Assembly-CSharp
+        m_MethodName: PlayVFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: asteroidDeath
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1244532901350563401}
+        m_TargetAssemblyTypeName: PoolBinder, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: asteroidExplosion
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1244532901350563401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4992990006948730628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca97a2c04be2b24eb47013db392fb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -49,18 +49,18 @@ MonoBehaviour:
   horizontalSpread: 1
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   blockLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65
   width: 1
   damage: 1
   lineRenderer: {fileID: 2946503538241831122}
-  lifetime: 0.45
+  lifetime: 0.4
   animatedProperties:
   - name: _Width
-    start: 1
-    end: 0
+    start: 0.5
+    end: -1
     shaderProperty: 0
 --- !u!1 &3856556278634429545
 GameObject:
@@ -115,7 +115,7 @@ LineRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f1fa386fdfd70c459d0eb1dcf59a6cb, type: 2}
+  - {fileID: 2100000, guid: b35c69dd62d2f66419e025285c107428, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,7 +141,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:

@@ -65,7 +65,7 @@ public class WeaponManager : MonoBehaviour
         return weapons.Find(appearance => appearance.slotType == slotType);
     }
     
-    private Weapon GetCurrentWeapon(SlotType slotType)
+    public Weapon GetCurrentWeapon(SlotType slotType)
     {
         if (_currentWeapons.TryGetValue(slotType, out Weapon currentWeapon))
         {

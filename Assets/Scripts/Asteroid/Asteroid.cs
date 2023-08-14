@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// <summary>
 ///     Represents an asteroid with continuous movement and rotation in a space.
@@ -63,5 +65,16 @@ public class Asteroid : MonoBehaviour
         var angle = _rotationSpeed * Time.deltaTime;
         var deltaRotation = Quaternion.AngleAxis(angle, _rotationAxis);
         transform.rotation *= deltaRotation;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer == 7)
+        {
+            if (other.gameObject.TryGetComponent<Hitable>(out Hitable hit))
+            {
+                hit.Hit(1);
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4793770403904715705}
   - component: {fileID: 4427538301649831836}
   - component: {fileID: 1244532901350563401}
+  - component: {fileID: 7767905549422341751}
   m_Layer: 6
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -187,18 +188,6 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4992990006948730628}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1244532901350563401}
         m_TargetAssemblyTypeName: PoolBinder, Assembly-CSharp
         m_MethodName: PlayVFX
@@ -223,6 +212,30 @@ MonoBehaviour:
           m_StringArgument: asteroidExplosion
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7767905549422341751}
+        m_TargetAssemblyTypeName: ScoreBinder, Assembly-CSharp
+        m_MethodName: Score
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 500
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4992990006948730628}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1244532901350563401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,5 +246,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ca97a2c04be2b24eb47013db392fb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7767905549422341751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4992990006948730628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c392935e16a5a409a9f072a76e544c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

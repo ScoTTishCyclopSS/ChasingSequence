@@ -12,7 +12,7 @@ public class LoadingScene : MonoBehaviour
     public CanvasGroup menuCanvasGroup;
     public CanvasGroup loadCanvasGroup;
     [Range(0.001f, 0.01f)] public float alphaFactor = 0.01f;
-    public Image loadingBarImg;
+    public Slider loadingBarImg;
     public GameObject ship;
     private bool _splashEnded;
     
@@ -96,7 +96,7 @@ public class LoadingScene : MonoBehaviour
         while (!op.isDone)
         {
             float progressVal = Mathf.Clamp01(op.progress / 0.9f);
-            loadingBarImg.fillAmount = progressVal;
+            loadingBarImg.value = progressVal;
             yield return null;
         }
     }

@@ -45,7 +45,10 @@ namespace Weapons
             Vector3 velocity = forward;
 	    	if(verticalSpread) velocity += Random.Range(-Rand, Rand) * transform.up;
 	    	if(horizontalSpread) velocity += Random.Range(-Rand, Rand) * transform.right;
-    
+            
+            float hitDistance = SetUpRange(velocity, range);
+            Debug.DrawRay(transform.position, velocity * hitDistance, Color.red, 3f);
+            
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, width, velocity, SetUpRange(velocity, range),targetLayer);
             var list = new List<int>();
             foreach(RaycastHit hit in hits)
